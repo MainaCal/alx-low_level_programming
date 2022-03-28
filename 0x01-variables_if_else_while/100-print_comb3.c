@@ -1,32 +1,36 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * main - the function main use printf to print numbers
+ * main - Prints numbers between 00 to 89.
  *
- * Return: Always 0 (Sucess)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i;
-	int a = 0;
-	int j = 49;
+	int i, e;
 
-	for (i = 48; i <= 56; ++i)
+	i = 48;
+	e = 48;
+
+	while (e < 58)
 	{
-		for (; j <= 57; ++j)
+		i = 48;
+		while (i < 58)
 		{
-
-			putchar(i);
-			putchar(j);
-			if (i != 56 || j != 57)
+			if (e != i && e < i)
 			{
-				putchar(44);
-				putchar(32);
+				putchar(e);
+				putchar(i);
+				if (i == 57 && e == 56)
+				{
+					break;
+				}
+				putchar(',');
+				putchar(' ');
 			}
+			i++;
 		}
-		a++;
-		j = 49 + a;
+		e++;
 	}
 	putchar('\n');
 	return (0);

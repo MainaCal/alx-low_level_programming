@@ -1,38 +1,33 @@
-/*
- * 101-print_comb4.c
- */
-
 #include <stdio.h>
 
 /**
- * main - Print_comb4
- * Description: Conditionals in C
- * Return: void
+ * main - prints all possible different combinations of three digits
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int num1, num2, num3;
+	int n, m, l;
 
-	for (num1 = 0; num1 < 8; num1++)
+	for (n = 48; n < 58; n++)
 	{
-		for (num2 = num1 + 1; num2 < 9; num2++)
+		for (m = 49; m < 58; m++)
 		{
-			for (num3 = num2 + 1; num3 < 10; num3++)
+			for (l = 50; l < 58; l++)
 			{
-			putchar((num1 % 10) + '0');
-			putchar((num2 % 10) + '0');
-			putchar((num3 % 10) + '0');
-
-			if (num1 == 7 && num2 == 8 && num3 == 9)
-				continue;
-
-			putchar(',');
-			putchar(' ');
+				if (l > m && m > n)
+				{
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
